@@ -1,0 +1,124 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+ProcessException: ProcessException: Process "C:\Users\Manasa Gavini\AndroidStudioProjects\flutter_login_demo\android\gradlew.bat" exited abnormally:
+Downloading https://services.gradle.org/distributions/gradle-4.6-all.zip
+........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Unzipping C:\Users\Manasa Gavini\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg\gradle-4.6-all.zip to C:\Users\Manasa Gavini\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg
+
+Exception in thread "main" java.io.FileNotFoundException: C:\Users\Manasa Gavini\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg\gradle-4.6-all.zip (The system cannot find the file specified)
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:219)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:149)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:163)
+	at org.gradle.wrapper.Install.unzip(Install.java:214)
+	at org.gradle.wrapper.Install.access$600(Install.java:27)
+	at org.gradle.wrapper.Install$1.call(Install.java:74)
+	at org.gradle.wrapper.Install$1.call(Install.java:48)
+	at org.gradle.wrapper.ExclusiveFileAccessManager.access(ExclusiveFileAccessManager.java:65)
+	at org.gradle.wrapper.Install.createDist(Install.java:48)
+	at org.gradle.wrapper.WrapperExecutor.execute(WrapperExecutor.java:128)
+	at org.gradle.wrapper.GradleWrapperMain.main(GradleWrapperMain.java:61)
+  Command: C:\Users\Manasa Gavini\AndroidStudioProjects\flutter_login_demo\android\gradlew.bat -v
+
+```
+#0      runCheckedAsync (package:flutter_tools/src/base/process.dart:250:5)
+<asynchronous suspension>
+#1      _initializeGradle (package:flutter_tools/src/android/gradle.dart:210:9)
+<asynchronous suspension>
+#2      _ensureGradle (package:flutter_tools/src/android/gradle.dart:191:37)
+<asynchronous suspension>
+#3      _readGradleProject (package:flutter_tools/src/android/gradle.dart:119:31)
+<asynchronous suspension>
+#4      _gradleProject (package:flutter_tools/src/android/gradle.dart:111:34)
+<asynchronous suspension>
+#5      getGradleAppOut (package:flutter_tools/src/android/gradle.dart:105:29)
+<asynchronous suspension>
+#6      AndroidApk.fromAndroidProject (package:flutter_tools/src/application_package.dart:137:23)
+<asynchronous suspension>
+#7      ApplicationPackageFactory.getPackageForPlatform (package:flutter_tools/src/application_package.dart:37:32)
+<asynchronous suspension>
+#8      FlutterDevice.runHot (package:flutter_tools/src/resident_runner.dart:288:56)
+<asynchronous suspension>
+#9      HotRunner.run (package:flutter_tools/src/run_hot.dart:295:39)
+<asynchronous suspension>
+#10     RunCommand.runCommand (package:flutter_tools/src/commands/run.dart:405:37)
+<asynchronous suspension>
+#11     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:545:18)
+#12     _asyncThenWrapperHelper.<anonymous closure> (dart:async/runtime/libasync_patch.dart:77:64)
+#13     _rootRunUnary (dart:async/zone.dart:1132:38)
+#14     _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#15     _FutureListener.handleValue (dart:async/future_impl.dart:126:18)
+#16     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:639:45)
+#17     Future._propagateToListeners (dart:async/future_impl.dart:668:32)
+#18     Future._complete (dart:async/future_impl.dart:473:7)
+#19     _SyncCompleter.complete (dart:async/future_impl.dart:51:12)
+#20     _AsyncAwaitCompleter.complete (dart:async/runtime/libasync_patch.dart:28:18)
+#21     _completeOnAsyncReturn (dart:async/runtime/libasync_patch.dart:294:13)
+#22     RunCommand.usageValues (package:flutter_tools/src/commands/run.dart)
+#23     _asyncThenWrapperHelper.<anonymous closure> (dart:async/runtime/libasync_patch.dart:77:64)
+#24     _rootRunUnary (dart:async/zone.dart:1132:38)
+#25     _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#26     _FutureListener.handleValue (dart:async/future_impl.dart:126:18)
+#27     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:639:45)
+#28     Future._propagateToListeners (dart:async/future_impl.dart:668:32)
+#29     Future._complete (dart:async/future_impl.dart:473:7)
+#30     _SyncCompleter.complete (dart:async/future_impl.dart:51:12)
+#31     _AsyncAwaitCompleter.complete (dart:async/runtime/libasync_patch.dart:28:18)
+#32     _completeOnAsyncReturn (dart:async/runtime/libasync_patch.dart:294:13)
+#33     AndroidDevice.targetPlatform (package:flutter_tools/src/android/android_device.dart)
+#34     _asyncThenWrapperHelper.<anonymous closure> (dart:async/runtime/libasync_patch.dart:77:64)
+#35     _rootRunUnary (dart:async/zone.dart:1132:38)
+#36     _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#37     _FutureListener.handleValue (dart:async/future_impl.dart:126:18)
+#38     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:639:45)
+#39     Future._propagateToListeners (dart:async/future_impl.dart:668:32)
+#40     Future._complete (dart:async/future_impl.dart:473:7)
+#41     _SyncCompleter.complete (dart:async/future_impl.dart:51:12)
+#42     _AsyncAwaitCompleter.complete.<anonymous closure> (dart:async/runtime/libasync_patch.dart:33:20)
+#43     _rootRun (dart:async/zone.dart:1124:13)
+#44     _CustomZone.run (dart:async/zone.dart:1021:19)
+#45     _CustomZone.bindCallback.<anonymous closure> (dart:async/zone.dart:947:23)
+#46     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#47     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#48     _runPendingImmediateCallback (dart:isolate/runtime/libisolate_patch.dart:115:13)
+#49     _RawReceivePortImpl._handleMessage (dart:isolate/runtime/libisolate_patch.dart:172:5)
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, v1.2.1, on Microsoft Windows [Version 10.0.17134.648], locale en-IN)
+    [32m•[39m Flutter version 1.2.1 at C:\Users\Manasa Gavini\flutter
+    [32m•[39m Framework revision 8661d8aecd (8 weeks ago), 2019-02-14 19:19:53 -0800
+    [32m•[39m Engine revision 3757390fa4
+    [32m•[39m Dart version 2.1.2 (build 2.1.2-dev.0.0 0a7dcf17eb)
+
+[32m[✓][39m Android toolchain - develop for Android devices (Android SDK version 28.0.3)
+    [32m•[39m Android SDK at C:\Users\Manasa Gavini\AppData\Local\Android\sdk
+    [32m•[39m Android NDK location not configured (optional; useful for native profiling support)
+    [32m•[39m Platform android-28, build-tools 28.0.3
+    [32m•[39m Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    [32m•[39m Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1248-b01)
+    [32m•[39m All Android licenses accepted.
+
+[32m[✓][39m Android Studio (version 3.3)
+    [32m•[39m Android Studio at C:\Program Files\Android\Android Studio
+    [32m•[39m Flutter plugin version 33.3.1
+    [32m•[39m Dart plugin version 182.5215
+    [32m•[39m Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1248-b01)
+
+[32m[✓][39m VS Code (version 1.33.0)
+    [32m•[39m VS Code at C:\Users\Manasa Gavini\AppData\Local\Programs\Microsoft VS Code
+    [32m•[39m Flutter extension version 2.25.0
+
+[32m[✓][39m Connected device (1 available)
+    [32m•[39m BND AL10 • NSM3Y18213025753 • android-arm64 • Android 8.0.0 (API 26)
+
+[32m•[39m No issues found!
+```

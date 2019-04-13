@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "645547811570",
+    "firebase_url": "https://tracked-you-ms.firebaseio.com",
+    "project_id": "tracked-you-ms",
+    "storage_bucket": "tracked-you-ms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645547811570:android:253e1da980d40be4",
+        "android_client_info": {
+          "package_name": "com.example.flutterlogindemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645547811570-mlot8jg9qpuv4gepq3g8fo7eg07at023.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1LDawB8ak2Ukc12J4Rt0zAMe5EatZ8SI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645547811570-mlot8jg9qpuv4gepq3g8fo7eg07at023.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
