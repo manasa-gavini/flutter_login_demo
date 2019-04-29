@@ -162,7 +162,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
             ? new ListView(
               shrinkWrap: true,
               children: <Widget>[
-               _showLogo(),
+               //_showLogo(),
                 _showEmailInput(),
                 _showPasswordInput(),
                 _showPrimaryButton(),
@@ -173,7 +173,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
             :new ListView(
               shrinkWrap: true,
               children: <Widget>[
-                _showLogo(),
+               // _showLogo(),
                 _showFirstnameInput(),
                 _showLastnameInput(),
                 _showEmailInput(),
@@ -209,7 +209,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
       tag: 'hero',
       child: Padding(
         padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
-        child:  Image.asset("assets/flutter-iconcrt(1).png"),
+        child:  Image.asset("assets/flutter-iconcrt (1).png"),
         
       ),
     );
