@@ -104,11 +104,18 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   Widget build(BuildContext context) {
     _isIos = Theme.of(context).platform == TargetPlatform.iOS;
     return new Scaffold(
-        appBar: new AppBar(
+        /*appBar: new AppBar(
           title: Center(child:new Text('Tracked You!')),
-        ),
-        body: Stack(
+        ),*/
+        body: new Stack(
+          fit: StackFit.expand,
           children: <Widget>[
+            new Image(
+            image: new AssetImage("assets/bg.jpg"),
+            fit: BoxFit.cover,
+            color: Colors.black54,
+            colorBlendMode: BlendMode.darken,
+          ),
             _showBody(),
             _showCircularProgress(),
           ],
@@ -145,36 +152,39 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   }
 
   Widget _showBody(){
-    return new Container(
-        padding: EdgeInsets.all(16.0),
-        child: new Form(
-          key: _formKey,
-          child: _formMode == FormMode.LOGIN
-          ? new ListView(
-            shrinkWrap: true,
-            children: <Widget>[
-              _showLogo(),
-              _showEmailInput(),
-              _showPasswordInput(),
-              _showPrimaryButton(),
-              _showSecondaryButton(),
-              _showErrorMessage(),
-            ],
-          )
-          :new ListView(
-            shrinkWrap: true,
-            children: <Widget>[
-              _showLogo(),
-              _showFirstnameInput(),
-              _showLastnameInput(),
-              _showEmailInput(),
-              _showPasswordInput(),
-              _showPrimaryButton(),
-              _showSecondaryButton(),
-              _showErrorMessage(),
-            ],
-          )
-        ));
+    return 
+      Center(
+        child: new Container(
+          padding: EdgeInsets.all(16.0),
+          child: new Form(
+            key: _formKey,
+            child: _formMode == FormMode.LOGIN
+            ? new ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+               _showLogo(),
+                _showEmailInput(),
+                _showPasswordInput(),
+                _showPrimaryButton(),
+                _showSecondaryButton(),
+                _showErrorMessage(),
+              ],
+            )
+            :new ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+                _showLogo(),
+                _showFirstnameInput(),
+                _showLastnameInput(),
+                _showEmailInput(),
+                _showPasswordInput(),
+                _showPrimaryButton(),
+                _showSecondaryButton(),
+                _showErrorMessage(),
+              ],
+            )
+          )),
+      );
   }
 
   Widget _showErrorMessage() {
@@ -198,12 +208,9 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
     return new Hero(
       tag: 'hero',
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0.0, 35.0, 0.0, 0.0),
-        child: CircleAvatar(
-          backgroundColor: Colors.transparent,
-          radius: 80.0,
-          child: Image.asset('assets/flutter-icon.png'),
-        ),
+        padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+        child:  Image.asset("assets/flutter-iconcrt(1).png"),
+        
       ),
     );
   }
@@ -214,12 +221,14 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
       child: new TextFormField(
         maxLines: 1,
         keyboardType: TextInputType.emailAddress,
+        style: TextStyle(color: Colors.white),
         autofocus: false,
         decoration: new InputDecoration(
-            hintText: 'Email',
+            labelText: 'Email',
+            labelStyle: TextStyle(color: Colors.lightBlue),
             icon: new Icon(
               Icons.mail,
-              color: Colors.grey,
+              color: Colors.lightBlue,
             )),
         validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
         onSaved: (value) => _email = value,
@@ -234,11 +243,13 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
         maxLines: 1,
         keyboardType: TextInputType.text,
         autofocus: false,
+        style: TextStyle(color: Colors.white),
         decoration: new InputDecoration(
-            hintText: 'First Name',
+            labelText: 'First Name',
+            labelStyle: TextStyle( color: Colors.lightBlue),
             icon: new Icon(
               Icons.verified_user,
-              color: Colors.grey,
+              color: Colors.lightBlue,
             )),
         validator: (value) => value.isEmpty ? 'First Name can\'t be empty' : null,
         onSaved: (value) =>  _firstname = value,
@@ -252,12 +263,14 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
       child: new TextFormField(
         maxLines: 1,
         keyboardType: TextInputType.text,
+        style: TextStyle(color: Colors.white),
         autofocus: false,
         decoration: new InputDecoration(
-            hintText: 'Last Name',
+             labelText: 'Last Name',
+            labelStyle: TextStyle( color: Colors.lightBlue),
             icon: new Icon(
               Icons.verified_user,
-              color: Colors.grey,
+              color: Colors.lightBlue,
             )),
         validator: (value) => value.isEmpty ? 'Last Name can\'t be empty' : null,
         onSaved: (value) =>  _lastname = value,
@@ -270,13 +283,15 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
       padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
       child: new TextFormField(
         maxLines: 1,
+        style: TextStyle(color: Colors.white),
         obscureText: true,
         autofocus: false,
         decoration: new InputDecoration(
-            hintText: 'Password',
+             labelText: 'Password',
+            labelStyle: TextStyle( color: Colors.lightBlue),
             icon: new Icon(
               Icons.lock,
-              color: Colors.grey,
+              color: Colors.lightBlue,
             )),
         validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
         onSaved: (value) => _password = value,
@@ -288,10 +303,10 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
     return new FlatButton(
       child: _formMode == FormMode.LOGIN
           ? new Text('Create an account',
-              style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300))
+              style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300, color: Colors.white))
           : new Text('Have an account? Sign in',
               style:
-                  new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
+                  new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300, color: Colors.white)),
       onPressed: _formMode == FormMode.LOGIN
           ? _changeFormToSignUp
           : _changeFormToLogin,
@@ -306,7 +321,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
           child: new RaisedButton(
             elevation: 5.0,
             shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-            color: Colors.blue,
+            color: Colors.lightBlue,
             child: _formMode == FormMode.LOGIN
                 ? new Text('Login',
                     style: new TextStyle(fontSize: 20.0, color: Colors.white))
